@@ -3,7 +3,6 @@ package main
 import(
 	"fmt"
 	"io/ioutil"
-	"log"
 	"net/http"
 	"html/template"
 	"regexp"
