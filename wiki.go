@@ -8,7 +8,7 @@ import(
 	"html/template"
 	"regexp"
 	"errors"
-	
+	"google.golang.org/appengine"
 )
 
 var validPath= regexp.MustCompile("^/(edit|view|save)/([a-zA-Z0-9]+)$")
@@ -124,7 +124,7 @@ func main(){
 	http.HandleFunc("/view/",viewHandler)
 	http.HandleFunc("/edit/",editHandler)
 	http.HandleFunc("/save/",saveHandler)
-	//appengine.Main()
-	log.Fatal(http.ListenAndServe(":8080",nil))
+	appengine.Main()
+	//log.Fatal(http.ListenAndServe(":8080",nil))
 
 }
